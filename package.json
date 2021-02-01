@@ -4,13 +4,16 @@
   "description": "",
   "private": true,
   "scripts": {
+    "prebuild": "npm run build:libraries",
+    "build": "npm run build:packages",
     "build:libraries": "concurrently npm:build:library:*",
     "build:packages": "concurrently npm:build:package:*",
     "build:library:common": "npm run --prefix packages/common build",
     "build:library:stream": "npm run --prefix packages/stream build",
     "build:package:dynamic": "npm run --prefix packages/dynamic build",
     "build:package:static": "npm run --prefix packages/static build",
-    "lint": "eslint --ext .ts packages"
+    "lint": "eslint --ext .ts packages",
+    "publish": "lerna publish --create-release github -y"
   },
   "repository": {
     "type": "git",
@@ -29,6 +32,7 @@
     "@joshuaavalon/eslint-config-typescript": "^4.4.0",
     "concurrently": "^5.3.0",
     "eslint": "^7.16.0",
+    "lerna": "^3.22.1",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
     "typescript": "^4.1.3"

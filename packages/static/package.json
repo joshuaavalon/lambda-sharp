@@ -16,6 +16,9 @@
     "url": "https://github.com/joshuaavalon/lambda-sharp.git",
     "directory": "packages/static"
   },
+  "bugs": {
+    "url": "https://github.com/joshuaavalon/lambda-sharp/issues"
+  },
   "keywords": [
     "sharp",
     "lambda"
