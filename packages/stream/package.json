@@ -1,6 +1,6 @@
 {
   "name": "@lambda-sharp/stream",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert stream to buffer",
   "publishConfig": {
     "access": "public"
@@ -28,7 +28,6 @@
   "files": [
     "lib"
   ],
-  "dependencies": {},
   "devDependencies": {
     "@types/node": "^14.14.17"
   }

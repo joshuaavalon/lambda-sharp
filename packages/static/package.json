@@ -1,6 +1,6 @@
 {
   "name": "@lambda-sharp/static",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "publishConfig": {
     "access": "public"
@@ -29,8 +29,8 @@
     "lib"
   ],
   "dependencies": {
-    "@lambda-sharp/common": "^1.0.0",
-    "@lambda-sharp/stream": "^1.0.0",
+    "@lambda-sharp/common": "^1.0.1",
+    "@lambda-sharp/stream": "^1.0.1",
     "file-type": "^16.1.0",
     "mime-types": "^2.1.27",
     "minio": "^7.0.18",
