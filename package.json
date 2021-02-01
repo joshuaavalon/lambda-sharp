@@ -1,0 +1,35 @@
+{
+  "name": "@lambda-sharp/lambda-sharp",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "build:libraries": "concurrently npm:build:library:*",
+    "build:packages": "concurrently npm:build:package:*",
+    "build:library:common": "npm run --prefix packages/common build",
+    "build:library:stream": "npm run --prefix packages/stream build",
+    "build:package:dynamic": "npm run --prefix packages/dynamic build",
+    "lint": "eslint --ext .ts packages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshuaavalon/lambda-sharp.git"
+  },
+  "keywords": [
+    "sharp",
+    "lambda"
+  ],
+  "workspaces": [
+    "packages/*"
+  ],
+  "author": "Joshua Avalon",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@joshuaavalon/eslint-config-typescript": "^4.4.0",
+    "concurrently": "^5.3.0",
+    "eslint": "^7.16.0",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.1.3"
+  }
+}
