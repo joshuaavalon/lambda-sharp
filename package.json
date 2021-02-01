@@ -9,6 +9,7 @@
     "build:library:common": "npm run --prefix packages/common build",
     "build:library:stream": "npm run --prefix packages/stream build",
     "build:package:dynamic": "npm run --prefix packages/dynamic build",
+    "build:package:static": "npm run --prefix packages/static build",
     "lint": "eslint --ext .ts packages"
   },
   "repository": {
