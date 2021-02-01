@@ -10,6 +10,10 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 15.x
       - name: Configure CI Git User
         run: |
           git config --global user.name "Joshua Avalon"
