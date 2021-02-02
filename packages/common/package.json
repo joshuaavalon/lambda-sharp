@@ -1,7 +1,7 @@
 {
   "name": "@lambda-sharp/common",
   "version": "1.0.3",
-  "description": "Common utilities for lambda-sharp",
+  "description": "Common utilities functions that used by lambda-sharp. Intended for internal use.",
   "publishConfig": {
     "access": "public"
   },
@@ -28,9 +28,11 @@
   "files": [
     "lib"
   ],
-  "devDependencies": {
+  "dependencies": {
     "@types/aws-lambda": "^8.10.68",
-    "@types/minio": "^7.0.6",
+    "@types/minio": "^7.0.6"
+  },
+  "devDependencies": {
     "@types/node": "^14.14.17"
   }
 }

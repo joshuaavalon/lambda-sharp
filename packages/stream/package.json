@@ -1,7 +1,7 @@
 {
   "name": "@lambda-sharp/stream",
   "version": "1.0.3",
-  "description": "Convert stream to buffer",
+  "description": "Convert stream to buffer. Intended for internal use.",
   "publishConfig": {
     "access": "public"
   },
