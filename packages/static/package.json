@@ -1,6 +1,6 @@
 {
   "name": "@lambda-sharp/static",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "publishConfig": {
     "access": "public"
@@ -29,8 +29,8 @@
     "lib"
   ],
   "dependencies": {
-    "@lambda-sharp/common": "^1.0.2",
-    "@lambda-sharp/stream": "^1.0.2",
+    "@lambda-sharp/common": "^1.0.3",
+    "@lambda-sharp/stream": "^1.0.3",
     "@types/aws-lambda": "^8.10.68",
     "@types/minio": "^7.0.6",
     "@types/sharp": "^0.26.1",

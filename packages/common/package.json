@@ -1,6 +1,6 @@
 {
   "name": "@lambda-sharp/common",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Common utilities for lambda-sharp",
   "publishConfig": {
     "access": "public"
