@@ -1,7 +1,7 @@
 {
   "name": "@lambda-sharp/static",
   "version": "1.0.3",
-  "description": "",
+  "description": "Real-time image processing on pre-defined transformation",
   "publishConfig": {
     "access": "public"
   },
