@@ -1,28 +1,17 @@
+import { Readable } from "stream";
 import { BufferableStream } from "./buffer-stream";
-import { InvalidStreamError } from "./error";
 
-export async function streamToBuffer(
-  stream: NodeJS.ReadableStream
-): Promise<Buffer> {
-  if (!stream) {
-    throw new InvalidStreamError("stream is not defined");
-  }
-
+export async function streamToBuffer(stream: Readable): Promise<Buffer> {
   const bufferableStream = new BufferableStream();
-
-  return new Promise(
-    (resolve: (data: Buffer) => void, reject: (error: Error) => void): void => {
-      stream
-        .on("error", (error: Error): void => {
-          bufferableStream.emit("error", error);
-        })
-        .pipe(bufferableStream)
-        .on("finish", (): void => {
-          resolve(bufferableStream.toBuffer());
-        })
-        .on("error", (error: Error): void => {
-          reject(error);
-        });
-    }
-  );
+  return new Promise<Buffer>((resolve, reject) => {
+    stream
+      .on("error", error => {
+        bufferableStream.emit("error", error);
+      })
+      .pipe(bufferableStream)
+      .on("finish", () => {
+        resolve(bufferableStream.toBuffer());
+      })
+      .on("error", reject);
+  });
 }
