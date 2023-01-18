@@ -1,7 +1,7 @@
-import { APIGatewayProxyStructuredResultV2 } from "aws-lambda";
+import type { APIGatewayProxyStructuredResultV2 } from "aws-lambda";
 import type { BucketItemStat } from "minio";
 
-import { AppError } from "./error";
+import { AppError } from "./error.js";
 
 export const responseJson = (
   body: Record<string, unknown>,

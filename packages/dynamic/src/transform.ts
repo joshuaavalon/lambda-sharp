@@ -1,11 +1,12 @@
-import sharp, { Sharp } from "sharp";
-import { Readable } from "stream";
-import fileType from "file-type";
+import sharp from "sharp";
+import { fileTypeFromBuffer } from "file-type";
 import mime from "mime-types";
 import { streamToBuffer } from "@lambda-sharp/stream";
 import { AppError } from "@lambda-sharp/common";
 
-import type { Json, JsonArray } from "./type";
+import type { Readable } from "node:stream";
+import type { Sharp } from "sharp";
+import type { Json, JsonArray } from "./type.js";
 
 const defaultContentType = "application/octet-stream";
 
@@ -54,7 +55,7 @@ export interface TransformResult {
 
 const transformOrigin = async (rs: Readable): Promise<TransformResult> => {
   const buffer = await streamToBuffer(rs);
-  const result = await fileType.fromBuffer(Buffer.from(buffer));
+  const result = await fileTypeFromBuffer(Buffer.from(buffer));
   const contentType = result?.mime ?? defaultContentType;
   return {
     contentType: contentType,

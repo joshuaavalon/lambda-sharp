@@ -1,2 +1,2 @@
-export * from "./buffer-stream";
-export * from "./stream-buffer";
+export * from "./buffer-stream.js";
+export * from "./stream-buffer.js";

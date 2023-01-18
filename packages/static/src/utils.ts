@@ -1,5 +1,6 @@
-import { APIGatewayProxyEventV2 } from "aws-lambda";
 import { AppError } from "@lambda-sharp/common";
+
+import type { APIGatewayProxyEventV2 } from "aws-lambda";
 
 export interface Query {
   key: string;

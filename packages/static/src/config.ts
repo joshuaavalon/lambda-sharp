@@ -1,4 +1,4 @@
-import { strict as assert } from "assert";
+import { strict as assert } from "node:assert";
 
 export interface AwsEnvConfig {
   awsRegion?: string;
@@ -79,12 +79,8 @@ const defaultAwsEnv = (
 export const readEnvConfig = (defaultAws = true): AppConfig => {
   const { awsBucket, awsEndPoint, maxAge: maxAgeStr, ...env } = readEnv();
   const awsEnv = readAwsEnv();
-  const {
-    awsRegion,
-    awsAccessKeyId,
-    awsSecretAccessKey,
-    awsSessionToken
-  } = defaultAwsEnv(defaultAws, env, awsEnv);
+  const { awsRegion, awsAccessKeyId, awsSecretAccessKey, awsSessionToken } =
+    defaultAwsEnv(defaultAws, env, awsEnv);
 
   assert.ok(maxAgeStr);
   assert.ok(awsBucket);

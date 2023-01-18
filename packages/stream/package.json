@@ -2,14 +2,19 @@
   "name": "@lambda-sharp/stream",
   "version": "1.0.3",
   "description": "Convert stream to buffer",
+  "type": "module",
   "publishConfig": {
     "access": "public"
   },
-  "main": "./lib/index.js",
-  "typings": "./lib/index.d.ts",
   "scripts": {
     "prebuild": "rimraf lib",
     "build": "tsc"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./dist/index.js"
+    }
   },
   "repository": {
     "type": "git",
@@ -28,7 +33,5 @@
   "files": [
     "lib"
   ],
-  "devDependencies": {
-    "@types/node": "^14.14.17"
-  }
+  "devDependencies": {}
 }

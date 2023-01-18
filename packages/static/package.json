@@ -2,14 +2,19 @@
   "name": "@lambda-sharp/static",
   "version": "1.0.3",
   "description": "",
+  "type": "module",
   "publishConfig": {
     "access": "public"
   },
-  "main": "./lib/index.js",
-  "typings": "./lib/index.d.ts",
   "scripts": {
     "prebuild": "rimraf lib",
     "build": "tsc"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./dist/index.js"
+    }
   },
   "repository": {
     "type": "git",
@@ -31,16 +36,15 @@
   "dependencies": {
     "@lambda-sharp/common": "^1.0.3",
     "@lambda-sharp/stream": "^1.0.3",
-    "@types/aws-lambda": "^8.10.68",
-    "@types/minio": "^7.0.6",
-    "@types/sharp": "^0.26.1",
-    "file-type": "^16.1.0",
-    "mime-types": "^2.1.27",
-    "minio": "^7.0.18",
-    "sharp": "^0.27.0"
+    "file-type": "^18.2.0",
+    "mime-types": "^2.1.35",
+    "minio": "^7.0.32",
+    "sharp": "^0.31.3"
   },
   "devDependencies": {
+    "@types/aws-lambda": "^8.10.109",
     "@types/mime-types": "^2.1.0",
-    "@types/node": "^14.14.17"
+    "@types/minio": "^7.0.15",
+    "@types/sharp": "^0.31.1"
   }
 }

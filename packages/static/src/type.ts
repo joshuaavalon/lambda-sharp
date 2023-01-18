@@ -1,5 +1,5 @@
 import type { Sharp } from "sharp";
-import type { Duplex } from "stream";
+import type { Duplex } from "node:stream";
 
 type FormatMethod =
   | "png"

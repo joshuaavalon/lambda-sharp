@@ -1,17 +1,18 @@
-import sharp, { Sharp } from "sharp";
-import { Readable } from "stream";
-import fileType from "file-type";
+import sharp from "sharp";
+import { fileTypeFromBuffer } from "file-type";
 import mime from "mime-types";
 import { streamToBuffer } from "@lambda-sharp/stream";
 import { AppError } from "@lambda-sharp/common";
 
-import type { ImageQuery } from "./type";
+import type { Readable } from "node:stream";
+import type { FormatEnum, Sharp } from "sharp";
+import type { ImageQuery } from "./type.js";
 
 const defaultContentType = "application/octet-stream";
 
 const transform = (image: ImageQuery, extension: string): Sharp => {
   const { queries, output } = image;
-  const format = extension.substr(1);
+  const format = extension.substring(1) as keyof FormatEnum;
   const formatParams = output[format];
   return queries
     .reduce((shp, query) => {
@@ -36,7 +37,7 @@ export interface TransformResult {
 
 const transformOrigin = async (rs: Readable): Promise<TransformResult> => {
   const buffer = await streamToBuffer(rs);
-  const result = await fileType.fromBuffer(Buffer.from(buffer));
+  const result = await fileTypeFromBuffer(Buffer.from(buffer));
   const contentType = result?.mime ?? defaultContentType;
   return {
     contentType: contentType,

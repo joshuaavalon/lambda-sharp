@@ -1,9 +1,9 @@
-import { APIGatewayProxyEventV2 } from "aws-lambda";
 import jwt from "jsonwebtoken";
 import { AppError } from "@lambda-sharp/common";
 
-import { AppConfig } from "./config";
-import type { Query } from "./type";
+import type { APIGatewayProxyEventV2 } from "aws-lambda";
+import type { AppConfig } from "./config.js";
+import type { Query } from "./type.js";
 
 export const getQuery = (event: APIGatewayProxyEventV2): string => {
   const { q } = event.queryStringParameters || {};

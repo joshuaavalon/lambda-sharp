@@ -1,5 +1,5 @@
-import { BufferableStream } from "./buffer-stream";
-import { InvalidStreamError } from "./error";
+import { BufferableStream } from "./buffer-stream.js";
+import { InvalidStreamError } from "./error.js";
 
 export async function streamToBuffer(
   stream: NodeJS.ReadableStream
